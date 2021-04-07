@@ -12,7 +12,7 @@ import java.net.*;
 
 /**
  *
- * @author MASTER
+ * @author A.S.
  */
 public class Thread_send extends Thread {
     private JTextArea Field;

@@ -12,7 +12,7 @@ import javax.swing.JTextArea;
 
 /**
  *
- * @author MASTER
+ * @author A.S.
  */
 public class Thread_receive extends Thread {
     

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author MASTER
+ * @author A.S.
  */
 public class GUI_Client extends javax.swing.JFrame {
 

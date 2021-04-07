@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author MASTER
+ * @author A.S.
  */
 public class GUI_Server extends javax.swing.JFrame {
     

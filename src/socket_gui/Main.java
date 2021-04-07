@@ -7,7 +7,7 @@ package socket_gui;
 
 /**
  *
- * @author MASTER
+ * @author A.S.
  */
 public class Main {
 
