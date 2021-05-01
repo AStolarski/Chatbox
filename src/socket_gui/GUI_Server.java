@@ -43,9 +43,9 @@ public class GUI_Server extends javax.swing.JFrame {
         Label_Data_received = new javax.swing.JLabel();
         Label_data_toSend = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Area_Data_received = new javax.swing.JTextArea();
+        Field_received = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Area_Data_toSend = new javax.swing.JTextArea();
+        Field_to_send = new javax.swing.JTextArea();
         Button_send = new javax.swing.JButton();
         Button_exit = new javax.swing.JButton();
 
@@ -66,14 +66,14 @@ public class GUI_Server extends javax.swing.JFrame {
 
         Label_data_toSend.setText("Data to send:");
 
-        Area_Data_received.setColumns(20);
-        Area_Data_received.setRows(5);
-        Area_Data_received.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(Area_Data_received);
+        Field_received.setColumns(20);
+        Field_received.setRows(5);
+        Field_received.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(Field_received);
 
-        Area_Data_toSend.setColumns(20);
-        Area_Data_toSend.setRows(5);
-        jScrollPane2.setViewportView(Area_Data_toSend);
+        Field_to_send.setColumns(20);
+        Field_to_send.setRows(5);
+        jScrollPane2.setViewportView(Field_to_send);
 
         Button_send.setText("Send");
         Button_send.addActionListener(new java.awt.event.ActionListener() {
@@ -200,12 +200,12 @@ public class GUI_Server extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Area_Data_received;
-    private javax.swing.JTextArea Area_Data_toSend;
     private javax.swing.JButton Button_exit;
     private javax.swing.JButton Button_send;
     private javax.swing.JTextField Field_port_receive;
     private javax.swing.JTextField Field_port_send;
+    private javax.swing.JTextArea Field_received;
+    private javax.swing.JTextArea Field_to_send;
     private javax.swing.JLabel Label_Data_received;
     private javax.swing.JLabel Label_data_toSend;
     private javax.swing.JLabel Label_port_receive;
@@ -220,8 +220,8 @@ public class GUI_Server extends javax.swing.JFrame {
         socket_receive = new ServerSocket(0);
         Field_port_send.setText(String.valueOf(socket_send.getLocalPort()));
         Field_port_receive.setText(String.valueOf(socket_receive.getLocalPort()));
-        thr_send = new Thread_send(Area_Data_toSend, socket_send);
-        thr_receive = new Thread_receive(Area_Data_received, socket_receive);
+        thr_send = new Thread_send(Field_to_send, socket_send);
+        thr_receive = new Thread_receive(Field_received, socket_receive);
         thr_send.start();
         thr_receive.start();
         } catch(Exception e) {System.out.println("Exception: "+e.getMessage());}

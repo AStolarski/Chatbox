@@ -56,7 +56,7 @@ public class GUI_Client extends javax.swing.JFrame {
         Label_Data_received = new javax.swing.JLabel();
         Label_data_toSend = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Field_to_receive = new javax.swing.JTextArea();
+        Field_received = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Client");
@@ -83,11 +83,11 @@ public class GUI_Client extends javax.swing.JFrame {
 
         Label_data_toSend.setText("Data to send:");
 
-        Field_to_receive.setColumns(20);
-        Field_to_receive.setRows(5);
-        Field_to_receive.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        Field_to_receive.setEnabled(false);
-        jScrollPane1.setViewportView(Field_to_receive);
+        Field_received.setColumns(20);
+        Field_received.setRows(5);
+        Field_received.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        Field_received.setEnabled(false);
+        jScrollPane1.setViewportView(Field_received);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,7 +99,7 @@ public class GUI_Client extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Label_data_toSend)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Label_Data_received)
@@ -184,7 +184,7 @@ public class GUI_Client extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_exit;
     private javax.swing.JButton Button_send;
-    private javax.swing.JTextArea Field_to_receive;
+    private javax.swing.JTextArea Field_received;
     private javax.swing.JTextArea Field_to_send;
     private javax.swing.JLabel Label_Data_received;
     private javax.swing.JLabel Label_data_toSend;
@@ -202,7 +202,7 @@ public class GUI_Client extends javax.swing.JFrame {
         } catch (Exception e) {s_send.close(); throw new Exception(e);}
         
                 thr_send = new Thread_send(Field_to_send, s_receive);       // Connect to receiving port on Server
-                thr_receive = new Thread_receive(Field_to_receive, s_send); // Connect to sending port on server
+                thr_receive = new Thread_receive(Field_received, s_send); // Connect to sending port on server
                 thr_send.start();
                 thr_receive.start();
     }
